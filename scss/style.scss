@@ -1,0 +1,92 @@
+@import "reset.scss";
+@import "variables.scss";
+@import "footer.scss";
+@import "ribbon.scss";
+@import "separator-ribbon";
+@import "nosotros.scss";
+@import "productos.scss";
+@import "contacto.scss";
+@import "contacto.scss";
+
+
+body{
+    overflow-x: hidden;
+}
+.btn1 {
+   padding: map-get($boton , padding );
+   border: map-get($boton , border );
+   border-radius: map-get($boton , border-radius );
+   color: map-get($boton , color );
+   background-color: map-get($boton , background-color );
+}
+
+.botonT1{
+    padding: map-get($boton , padding );
+    border-radius: map-get($boton , border-radius );
+    margin-top: 10px;
+    background-color: #54aac0;
+    -width: 100px;
+    
+}
+
+.botonT2{
+    @extend .botonT1;
+    background-color: #54aac0;
+}
+
+.botonT3{
+    @extend .botonT1;
+    -color: black;
+    -size: 15px;
+    -box-shadow: 10px 5px 5px black;
+    
+}
+
+.botonT4{
+    @extend .botonT1;
+    -color: rgb(150, 19, 19);
+    -font-weight: 100;
+    -border-radius:75%;
+    -box-shadow:3px 2px 5px 1px #ccc;
+  
+}
+
+.botonT5{
+    @extend .botonT1;
+}
+
+.botonT6 {
+    @extend .botonT1;
+}
+
+@mixin PropiedadTarjeta ($display,$direccion,$wrap,$justify,$align) {
+    display: $display;
+    flex-direction: $direccion;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+.cardbody1 {
+    @include PropiedadTarjeta(flex, row, nowrap, star, center);
+    max-width: 200px;
+    .p {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .producto h1{
+      font-size: 2rem;
+    }
+    .producto p {
+      font-size: 10px;
+    }
+
+    .contacto h1{
+        font-size: 2rem;
+      }
+      .contacto p {
+        font-size: 10px;
+      }
+  }
